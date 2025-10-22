@@ -1,0 +1,13 @@
+.shape {
+  height: 40 rem;
+  width: 40 rem;
+  position: absolute;
+  top: -6rem;
+  right: -6rem;
+  border-radius: 50%;
+  background: #3b82f6; /* blue-500 */
+  filter: blur(8rem);
+  opacity: 0.3;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+}

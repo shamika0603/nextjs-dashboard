@@ -14,11 +14,14 @@ import { formatCurrency } from './utils';
 let _sql: ReturnType<typeof postgres> | null = null;
 function getSql() {
   if (!_sql) {
-    if (!process.env.POSTGRES_URL) {
-      throw new Error('POSTGRES_URL environment variable is not set. Cannot connect to database.');
+    // Accept POSTGRES_URL (preferred) or DATABASE_URL (common on some platforms)
+    const postgresUrl = process.env.POSTGRES_URL || process.env.DATABASE_URL;
+    if (!postgresUrl) {
+      throw new Error(
+        'Missing database connection string. Set POSTGRES_URL (preferred) or DATABASE_URL in the environment.'
+      );
     }
     // Allow disabling SSL for local development. Set POSTGRES_SSL=false to disable.
-    const postgresUrl = process.env.POSTGRES_URL;
     const isLocalhost = /^(postgres(?:ql)?:)?\/\/(localhost|127\.0\.0\.1)/.test(postgresUrl);
     const forceSsl = process.env.POSTGRES_SSL !== 'false' && !isLocalhost;
     _sql = postgres(postgresUrl, forceSsl ? { ssl: 'require' } : {});
@@ -166,8 +169,10 @@ export async function fetchInvoicesPages(query: string) {
 export async function fetchInvoiceById(id: string) {
   try {
     console.log('Fetching invoice with id:', id);
-    if (!process.env.POSTGRES_URL) {
-      const msg = 'POSTGRES_URL environment variable is not set. Cannot connect to database.';
+    // Ensure a DB URL is available (accept DATABASE_URL as a fallback)
+    const postgresUrl = process.env.POSTGRES_URL || process.env.DATABASE_URL;
+    if (!postgresUrl) {
+      const msg = 'Missing database connection string. Set POSTGRES_URL or DATABASE_URL in the environment.';
       console.error(msg);
       throw new Error(msg);
     }
@@ -199,8 +204,9 @@ export async function fetchInvoiceById(id: string) {
 
 export async function fetchCustomers() {
   try {
-    if (!process.env.POSTGRES_URL) {
-      const msg = 'POSTGRES_URL environment variable is not set. Cannot connect to database.';
+    const postgresUrl = process.env.POSTGRES_URL || process.env.DATABASE_URL;
+    if (!postgresUrl) {
+      const msg = 'Missing database connection string. Set POSTGRES_URL or DATABASE_URL in the environment.';
       console.error(msg);
       throw new Error(msg);
     }

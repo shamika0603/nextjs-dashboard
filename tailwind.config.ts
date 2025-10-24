@@ -13,9 +13,16 @@ const config: Config = {
       },
       colors: {
         blue: {
-          400: '#2589FE',
-          500: '#0070F3',
-          600: '#2F6FEB',
+          400: '#0077C8',
+          500: '#0077C8',
+          600: '#0077C8',
+        },
+        grace: {
+          primary: '#0077C8',
+          secondary: '#E6007E',
+          accent: '#1E1E1E',
+          light: '#F8F9FB',
+          lightPrimary: '#F0F4FF',
         },
       },
     },

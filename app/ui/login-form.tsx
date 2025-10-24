@@ -41,7 +41,7 @@ export default function LoginForm() {
               type="email"
               placeholder="Enter your email address"
               required
-              className="peer block w-full rounded-md border border-gray-200 py-[9px] pl-10 text-sm placeholder:text-gray-500 focus:outline-blue-500"
+              className="peer block w-full rounded-md border border-gray-200 py-[9px] pl-10 text-sm placeholder:text-gray-500 focus:outline-[#0077C8]"
               aria-required="true"
             />
             <AtSymbolIcon
@@ -67,7 +67,7 @@ export default function LoginForm() {
               placeholder="Enter password"
               required
               minLength={6}
-              className="peer block w-full rounded-md border border-gray-200 py-[9px] pl-10 text-sm placeholder:text-gray-500 focus:outline-blue-500"
+              className="peer block w-full rounded-md border border-gray-200 py-[9px] pl-10 text-sm placeholder:text-gray-500 focus:outline-[#0077C8]"
               aria-required="true"
             />
             <KeyIcon

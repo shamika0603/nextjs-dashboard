@@ -1,5 +1,20 @@
 import { Revenue } from './definitions';
 
+/**
+ * Get the base URL for the application.
+ * Properly handles Vercel deployments by ensuring https:// prefix on VERCEL_URL.
+ * Priority: NEXT_PUBLIC_BASE_URL > VERCEL_URL (with https://) > localhost
+ */
+export const getBaseUrl = () => {
+  if (process.env.NEXT_PUBLIC_BASE_URL) {
+    return process.env.NEXT_PUBLIC_BASE_URL;
+  }
+  if (process.env.VERCEL_URL) {
+    return `https://${process.env.VERCEL_URL}`;
+  }
+  return 'http://localhost:3000';
+};
+
 export const formatCurrency = (amount: number) => {
   return (amount / 100).toLocaleString('en-US', {
     style: 'currency',

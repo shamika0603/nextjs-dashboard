@@ -11,17 +11,15 @@ export default function LoginPage() {
     <main className="flex items-center justify-center min-h-screen bg-gray-50">
       <div className="w-full max-w-md rounded-lg overflow-hidden shadow-lg bg-white">
         {/* Header */}
-        <div className="bg-[#0077C8] p-4 flex justify-center">
-          <div className="w-32 text-white md:w-36">
-            <Image
-              src="/logo.png"
-              alt="Grace Printing & Mailing"
-              width={240}
-              height={60}
-              priority
-              className="h-auto w-auto"
-            />
-          </div>
+        <div className="bg-[#0077C8] p-4 text-center flex justify-center">
+          <Image
+            src="/logo.png"
+            alt="Grace Financial Systems"
+            width={280}
+            height={50}
+            priority
+            className="h-auto w-auto inline-block"
+          />
         </div>
 
         {/* Form */}

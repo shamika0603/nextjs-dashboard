@@ -10,12 +10,12 @@ export default function SideNav() {
         className="mb-2 flex h-20 items-end justify-start rounded-md bg-[#0077C8] p-4 md:h-40"
         href="/"
       >
-        <div className="w-32 text-white md:w-40">
+        <div className="w-64 text-white md:w-48">
           <Image
               src="/logo.png"
-              alt="Grace Printing & Mailing"
-              width={200}
-              height={60}
+              alt="Grace Financial Systems"
+              width={900}
+              height={200}
               priority
               style={{ width: 'auto', height: 'auto' }}
             />

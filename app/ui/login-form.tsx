@@ -1,5 +1,5 @@
 'use client';
-import { lusitana } from '@/app/ui/fonts';
+import { manrope } from '@/app/ui/fonts';
 import {
   AtSymbolIcon,
   KeyIcon,
@@ -20,10 +20,10 @@ export default function LoginForm() {
     <form action={formAction} className="space-y-3" aria-label="Login form">
       <div className="flex-1 rounded-lg bg-gray-50 px-6 pb-6 pt-8 shadow-sm">
         <h1
-          className={`${lusitana.className} mb-4 text-2xl text-gray-900`}
+          className={`${manrope.className} mb-4 text-2xl font-extrabold text-gray-900`}
           aria-label="Please log in to continue"
         >
-          Please log in to continue.
+          Please log in to continue
         </h1>
 
         {/* Email field */}
@@ -41,7 +41,7 @@ export default function LoginForm() {
               type="email"
               placeholder="Enter your email address"
               required
-              className="peer block w-full rounded-md border border-gray-200 py-[9px] pl-10 text-sm placeholder:text-gray-500 focus:outline-[#0077C8]"
+              className="peer block w-full rounded-md border border-gray-200 py-[9px] pl-10 text-sm placeholder:text-gray-500 focus:outline-[#334155]"
               aria-required="true"
             />
             <AtSymbolIcon
@@ -67,7 +67,7 @@ export default function LoginForm() {
               placeholder="Enter password"
               required
               minLength={6}
-              className="peer block w-full rounded-md border border-gray-200 py-[9px] pl-10 text-sm placeholder:text-gray-500 focus:outline-[#0077C8]"
+              className="peer block w-full rounded-md border border-gray-200 py-[9px] pl-10 text-sm placeholder:text-gray-500 focus:outline-[#334155]"
               aria-required="true"
             />
             <KeyIcon
@@ -83,11 +83,12 @@ export default function LoginForm() {
         {/* Single Log in button */}
         <Button
           type="submit"
-          className="mt-6 w-full"
+          className="mt-6 mx-auto w-full max-w-[200px] justify-center gap-2"
           aria-disabled={isPending}
           aria-label="Log in to your account"
         >
-          Log in <ArrowRightIcon className="ml-auto h-5 w-5 text-gray-50" aria-hidden="true" />
+          <span className="flex-1 text-center">Log in</span>
+          <ArrowRightIcon className="h-5 w-5 text-gray-50" aria-hidden="true" />
         </Button>
 
         {/* Error message */}

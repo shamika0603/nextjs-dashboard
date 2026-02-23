@@ -1,6 +1,6 @@
 import { generateYAxis } from '@/app/lib/utils';
 import { CalendarIcon } from '@heroicons/react/24/outline';
-import { lusitana } from '@/app/ui/fonts';
+import { manrope } from '@/app/ui/fonts';
 import { fetchRevenue } from '@/app/lib/data';
 
 // This component is representational only.
@@ -24,7 +24,7 @@ export default async function RevenueChart() { // Make component async, remove t
 
   return (
     <div className="w-full md:col-span-4">
-      <h2 className={`${lusitana.className} mb-4 text-xl md:text-2xl`}>
+      <h2 className={`${manrope.className} mb-4 text-xl font-extrabold md:text-2xl`}>
         Recent Revenue
       </h2>
       
@@ -41,7 +41,7 @@ export default async function RevenueChart() { // Make component async, remove t
 
           {revenue.map((month) => (
             <div key={month.month} className="flex flex-col items-center gap-2">
-              <div className="w-full rounded-md bg-[#0077C8]"
+              <div className="w-full rounded-md bg-gradient-to-t from-[#334155] to-[#1E293B]"
                 style={{
                   height: `${(chartHeight / topLabel) * month.revenue}px`,
                 }}
@@ -54,7 +54,7 @@ export default async function RevenueChart() { // Make component async, remove t
         </div>
         <div className="flex items-center pb-2 pt-6">
           <CalendarIcon className="h-5 w-5 text-gray-500" />
-          <h3 className="ml-2 text-sm text-gray-500 ">Last 12 months</h3>
+          <h3 className="ml-2 text-sm font-extrabold text-gray-500 ">Last 12 months</h3>
         </div>
       </div> 
     </div>

@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { lusitana } from '@/app/ui/fonts';
+import { manrope, inter } from '@/app/ui/fonts';
 import Search from '@/app/ui/search';
 import {
   CustomersTableType,
@@ -13,7 +13,7 @@ export default async function CustomersTable({
 }) {
   return (
     <div className="w-full">
-      <h1 className={`${lusitana.className} mb-8 text-xl md:text-2xl`}>
+      <h1 className={`${manrope.className} mb-8 text-xl font-extrabold md:text-2xl`}>
         Customers
       </h1>
       <Search placeholder="Search customers..." />
@@ -63,7 +63,7 @@ export default async function CustomersTable({
                 ))}
               </div>
               <table className="hidden min-w-full rounded-md text-gray-900 md:table">
-                <thead className="rounded-md bg-gray-50 text-left text-sm font-normal">
+                <thead className={`${inter.className} rounded-md bg-gray-50 text-left text-sm font-medium`}>
                   <tr>
                     <th scope="col" className="px-4 py-5 font-medium sm:pl-6">
                       Name

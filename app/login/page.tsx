@@ -8,12 +8,12 @@ export const metadata: Metadata = {
 
 export default function LoginPage() {
   return (
-    <main className="flex items-center justify-center min-h-screen bg-gray-50">
+    <main className="flex min-h-screen items-center justify-center bg-gradient-to-br from-[#1E293B] to-[#334155]">
       <div className="w-full max-w-md rounded-lg overflow-hidden shadow-lg bg-white">
         {/* Header */}
-        <div className="bg-[#0077C8] p-4 text-center flex justify-center">
+        <div className="flex justify-center bg-gradient-to-r from-[#1E293B] to-[#334155] p-4 text-center">
           <Image
-            src="/logo.png"
+            src="/logo2.png"
             alt="Grace Financial Systems"
             width={280}
             height={50}

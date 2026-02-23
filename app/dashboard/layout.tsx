@@ -4,8 +4,8 @@ import { inter } from '@/app/ui/fonts';
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} antialiased`}>
-        <div className="flex h-screen flex-col md:flex-row md:overflow-hidden">
+      <body className={`${inter.className} antialiased bg-white`}>
+        <div className="flex h-screen flex-col bg-white md:flex-row md:overflow-hidden">
           {/* Sidebar */}
           <div className="w-full flex-none md:w-64">
             <SideNav />

@@ -7,6 +7,7 @@ import {
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import clsx from 'clsx';
+import { inter } from '@/app/ui/fonts';
 
 // Map of links to display in the side navigation.
 // Depending on the size of the application, this would be stored in a database.
@@ -22,7 +23,7 @@ const links = [
 
 export default function NavLinks() {
   const pathname = usePathname();
-  // ...
+
   return (
     <>
       {links.map((link) => {
@@ -31,10 +32,11 @@ export default function NavLinks() {
           <Link
             key={link.name}
             href={link.href}
-             className={clsx(
-              'flex h-[48px] grow items-center justify-center gap-2 rounded-md bg-gray-50 p-3 text-sm font-medium hover:bg-[#F0F4FF] hover:text-[#0077C8] md:flex-none md:justify-start md:p-2 md:px-3',
+            className={clsx(
+              inter.className,
+              'flex h-[48px] grow items-center justify-center gap-2 rounded-md border border-transparent bg-transparent p-3 text-sm font-medium text-slate-100 transition-colors hover:border-[#334155] hover:bg-[#334155] hover:text-white md:flex-none md:justify-start md:p-2 md:px-3',
               {
-                'bg-[#F0F4FF] text-[#0077C8]': pathname === link.href,
+                'border-[#334155] bg-[#334155] text-white': pathname === link.href,
               },
             )}
           >

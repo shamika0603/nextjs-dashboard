@@ -39,7 +39,7 @@ export default function LoginForm() {
               id="email"
               name="email"
               type="email"
-              placeholder="Enter your email address"
+              placeholder="Enter 'user@nextmail.com' for demo version"
               required
               className="peer block w-full rounded-md border border-gray-200 py-[9px] pl-10 text-sm placeholder:text-gray-500 focus:outline-[#334155]"
               aria-required="true"
@@ -64,7 +64,7 @@ export default function LoginForm() {
               id="password"
               name="password"
               type="password"
-              placeholder="Enter password"
+              placeholder="Enter '123456' for demo version"
               required
               minLength={6}
               className="peer block w-full rounded-md border border-gray-200 py-[9px] pl-10 text-sm placeholder:text-gray-500 focus:outline-[#334155]"
